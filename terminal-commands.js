@@ -10,10 +10,16 @@ module.exports.ls = () => {
   });
 };
 
-module.exports.touch = () => {
-  // your code here
+module.exports.touch = (name) => {
+  fs.writeFile(name, '', (err) => {
+    if(err) throw err;
+    console.log('Your file has been created.');
+  })
 };
 
-module.exports.mkdir = () => {
-  // your code here
+module.exports.mkdir = (name) => {
+  fs.mkdir(name, { recursive: true }, (err) => {
+    if (err) throw err;
+    console.log('Your folder has been created.')
+ });
 };
